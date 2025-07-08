@@ -102,24 +102,6 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-
-%% Support for special Unicode characters
-% Zero width non-joiner
-\def\zerowidthnnonjoiner{%
-  \texorpdfstring{%
-    \textormath{\nobreak\discretionary{-}{}{\kern.03em}}{}%
-  }{}%
-}
-\ifPDFTeX
-  \DeclareUnicodeCharacter{200C}{{\zerowidthnnonjoiner}}
-\else
-  % the next two lines both contain an invisible zero width non-joiner char
-
-
-  \catcode`‌=\active
-  \protected\def ‌{\zerowidthnnonjoiner}
-\fi
-
 %-------------------------------------------
 % RESUME STARTS HERE 
 
@@ -128,18 +110,18 @@
 %----------HEADING----------
 
 \begin{center}
-    \textbf{\Huge \scshape FIRSTNAME LASTNAME} \\ \vspace{1pt}
-    \small 970-417-0100 $|$ \href{mailto:YOUR_EMAIL_ADDRESS@EXAMPLE.ORG}{YOUR_EMAIL_ADDRESS@EXAMPLE.ORG} $|$ 
-    \href{https://www.linkedin.com/in/YOUR_LINKEDIN/}{linkedin.com/in/YOUR_LINKEDIN} $|$
-    \href{https://github.com/YOUR_GITHUB}{github.com/YOUR_GITHUB} $|$
-    \href{https://YOUR_WEBSITE/}{YOUR_WEBSITE} 
+    \textbf{\LARGE \textsc FIRSTNAME LASTNAME} \\ \vspace{1pt}
+    303-555-5555 \textbar\enspace \href{mailto:YOUREMAIL@EXAMPLE.ORG}{YOUREMAIL@EXAMPLE.ORG} \textbar\enspace
+    \href{https://www.linkedin.com/in/YOURLINKEDIN/}{linkedin.com/in/YOURLINKEDIN} \textbar\enspace
+    \href{https://github.com/YOURGITHUB}{github.com/YOURGITHUB} \textbar\enspace
+    \href{https://YOURWEBSITE.example.org/}{YOURWEBSITE} 
 \end{center}
 
-\section{Summary}
-\begin{itemize}[leftmargin=0.15in, label={}]
-	\small{\item{
-	
-\end{itemize}
+%\section{Summary}
+%\begin{itemize}[leftmargin=0.15in, label={}]
+%	\small{\item{}}
+%	
+%\end{itemize}
 
 %-----------SKILLS-----------
 \section{Skills} 
@@ -196,7 +178,6 @@
         \resumeItem{Communicated with managers to set up campus computers used on campus}
         \resumeItem{Maintained upkeep of computers, classroom equipment, and 200 printers across campus}
     \resumeItemListEnd
-      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
@@ -225,8 +206,9 @@
 \section{Certifications}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-	\textbf{Example Cert+} \href{https://URL_TO_CREDLY_BADGE.EXAMPLE.ORG}{Example Certification} $|$ {May 2024}\\
-	\textbf{CompTIA} \href{https://www.credly.com/URL_TO_PROOF_OF_CERTIFICATION.EXAMPLE.ORG}{Example+} $|$ {February 2025}
+	\textbf{Example Cert+} \href{https://URL_TO_CREDLY_BADGE.EXAMPLE.ORG}{Example Certification} \textbar {May 2024}\\
+	\textbf{CompTIA} \href{https://www.credly.com/URL_TO_PROOF_OF_CERTIFICATION.EXAMPLE.ORG}{Example+} \textbar {February 2025}
+ 	}}
  \end{itemize}
  
 \end{document}
