@@ -1,12 +1,12 @@
 %-------------------------
 % Resume in Latex
-% Author : Jake Gutierrez
+% Author : YOUR NAME HERE (FIRST NAME AND LAST NAME)
 % Based off of: https://github.com/sb2nov/resume
+% Based off of: https://github.com/jakegut/resume
 % License : MIT
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
-
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -38,6 +38,9 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+
+% If you want a page number: 
+% \fancyfoot[R]{\thepage}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
@@ -85,7 +88,7 @@
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -99,35 +102,66 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% Support for special Unicode characters
+% Zero width non-joiner
+\def\zerowidthnnonjoiner{%
+  \texorpdfstring{%
+    \textormath{\nobreak\discretionary{-}{}{\kern.03em}}{}%
+  }{}%
+}
+\ifPDFTeX
+  \DeclareUnicodeCharacter{200C}{{\zerowidthnnonjoiner}}
+\else
+  % the next two lines both contain an invisible zero width non-joiner char
+
+
+  \catcode`‌=\active
+  \protected\def ‌{\zerowidthnnonjoiner}
+\fi
+
+%-------------------------------------------
+% RESUME STARTS HERE 
 
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
 
 \begin{center}
-    \textbf{\Huge \scshape Jake Ryan} \\ \vspace{1pt}
-    \small 123-456-7890 $|$ \href{mailto:x@x.com}{\underline{jake@su.edu}} $|$ 
-    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
-    \href{https://github.com/...}{\underline{github.com/jake}}
+    \textbf{\Huge \scshape FIRSTNAME LASTNAME} \\ \vspace{1pt}
+    \small 970-417-0100 $|$ \href{mailto:YOUR_EMAIL_ADDRESS@EXAMPLE.ORG}{YOUR_EMAIL_ADDRESS@EXAMPLE.ORG} $|$ 
+    \href{https://www.linkedin.com/in/YOUR_LINKEDIN/}{linkedin.com/in/YOUR_LINKEDIN} $|$
+    \href{https://github.com/YOUR_GITHUB}{github.com/YOUR_GITHUB} $|$
+    \href{https://YOUR_WEBSITE/}{YOUR_WEBSITE} 
 \end{center}
 
+\section{Summary}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\small{\item{
+	
+\end{itemize}
+
+%-----------SKILLS-----------
+\section{Skills} 
+	\begin{itemize}[leftmargin=0.15in, label={}] 
+		\small{\item{ 
+			%\textbf{Networking \& Infrastructure}{: TCP/IP, VLANs, Routing Protocols, Wireless (802.11), Network Troubleshooting} \\
+			\textbf{Programming \& Scripting}{: Python, Bash, PowerShell, C++} \\
+			%\textbf{Security \& Monitoring}{: Suricata, Zeek, ELK Stack, OpenSearch, Network Security} \\
+			%\textbf{DevOps \& Deployment}{: Docker, Kubernetes, Jenkins, Git} \\
+			\textbf{Enterprise Tools}{: SCCM, InTune, PDQ Deploy, Google Admin Console, Active Directory} \\
+			\textbf{Technologies}{: REST APIs, Database Management, GitOPS, CI/CD Pipelines}
+		}} 
+	\end{itemize}
+%-------------------------------------------
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Southwestern University}{Georgetown, TX}
-      {Bachelor of Arts in Computer Science, Minor in Business}{Aug. 2018 -- May 2021}
-    \resumeSubheading
-      {Blinn College}{Bryan, TX}
-      {Associate's in Liberal Arts}{Aug. 2014 -- May 2018}
+      {Metropolitan State University of Denver}{Denver, CO}
+      {Bachelor of Science in Computer Science}{Graduated May 2027}
+      
   \resumeSubHeadingListEnd
 
 
@@ -135,15 +169,6 @@
 \section{Experience}
   \resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Undergraduate Research Assistant}{June 2020 -- Present}
-      {Texas A\&M University}{College Station, TX}
-      \resumeItemListStart
-        \resumeItem{Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems}
-        \resumeItem{Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data}
-        \resumeItem{Explored ways to visualize GitHub collaboration in a classroom setting}
-      \resumeItemListEnd
-      
 % -----------Multiple Positions Heading-----------
 %    \resumeSubSubheading
 %     {Software Engineer I}{Oct 2014 - Sep 2016}
@@ -155,64 +180,53 @@
 %-------------------------------------------
 
     \resumeSubheading
-      {Information Technology Support Specialist}{Sep. 2018 -- Present}
-      {Southwestern University}{Georgetown, TX}
+      {Undergraduate Research Assistant}{October 2023 -- Present}
+      {The Cybersecurity Center $|$ MSU Denver}{Denver, CO}
       \resumeItemListStart
-        \resumeItem{Communicate with managers to set up campus computers used on campus}
-        \resumeItem{Assess and troubleshoot computer problems brought by students, faculty and staff}
-        \resumeItem{Maintain upkeep of computers, classroom equipment, and 200 printers across campus}
-    \resumeItemListEnd
+      	\resumeItem{Developed a REST API using FastAPI and OpenSearch to store data from learning management systems}
+        \resumeItem{Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data}
+        \resumeItem{Led student training sessions on Kubernetes and Docker}
+      \resumeItemListEnd
 
     \resumeSubheading
-      {Artificial Intelligence Research Assistant}{May 2019 -- July 2019}
-      {Southwestern University}{Georgetown, TX}
+      {Information Technology Support Specialist}{June 2023 -- December 2023}
+      {Information Technology Services $|$ MSU Denver}{Denver, CO}
       \resumeItemListStart
-        \resumeItem{Explored methods to generate video game dungeons based off of \emph{The Legend of Zelda}}
-        \resumeItem{Developed a game in Java to test the generated dungeons}
-        \resumeItem{Contributed 50K+ lines of code to an established codebase via Git}
-        \resumeItem{Conducted  a human subject study to determine which video game dungeon generation technique is enjoyable}
-        \resumeItem{Wrote an 8-page paper and gave multiple presentations on-campus}
-        \resumeItem{Presented virtually to the World Conference on Computational Intelligence}
+        \resumeItem{Assessed and troubleshooted computer problems brought by students, faculty and staff}
+        \resumeItem{Communicated with managers to set up campus computers used on campus}
+        \resumeItem{Maintained upkeep of computers, classroom equipment, and 200 printers across campus}
+    \resumeItemListEnd
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
 
 %-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
-          \resumeItemListStart
-            \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
-            \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
-            \resumeItem{Visualized GitHub data to show collaboration}
-            \resumeItem{Used Celery and Redis for asynchronous tasks}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Simple Paintball} $|$ \emph{Spigot API, Java, Maven, TravisCI, Git}}{May 2018 -- May 2020}
-          \resumeItemListStart
-            \resumeItem{Developed a Minecraft server plugin to entertain kids during free time for a previous job}
-            \resumeItem{Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review}
-            \resumeItem{Implemented continuous delivery using TravisCI to build the plugin upon new a release}
-            \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+\section{Personal Projects} 
+	\resumeSubHeadingListStart 
+		\resumeProjectHeading 
+			{\textbf{My Personal Project} $|$ \emph{Python, OpenGL, ModernGL}}{} 
+		\resumeItemListStart 
+			\resumeItem{Developed a 3D game using Python and ModernGL for rendering} 
+			\resumeItem{Implemented procedural terrain generation} 
+			\resumeItem{Optimized rendering performance by leveraging GPU capabilities with OpenGL 3.3+} 
+		\resumeItemListEnd
+		
+		\resumeProjectHeading 
+			{\textbf{OpenSource Contribution} $|$ \emph{Cool Language, Open Source}}{} 
+		\resumeItemListStart 
+			\resumeItem{Contributed to COOL OPEN SOURCE game engine by refactoring legacy diagnostic code for improved maintainability}
+			\resumeItem{Replaced monolithic function with object-oriented CoolSegments class, merged as PR \href{https://LINK_TO_PULL_REQUEST.EXAMPLE.ORG}{\#20961}}
+		\resumeItemListEnd
+		
+	\resumeSubHeadingListEnd
 
-
-
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R} \\
-     \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
-     \textbf{Developer Tools}{: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse} \\
-     \textbf{Libraries}{: pandas, NumPy, Matplotlib}
-    }}
+	\textbf{Example Cert+} \href{https://URL_TO_CREDLY_BADGE.EXAMPLE.ORG}{Example Certification} $|$ {May 2024}\\
+	\textbf{CompTIA} \href{https://www.credly.com/URL_TO_PROOF_OF_CERTIFICATION.EXAMPLE.ORG}{Example+} $|$ {February 2025}
  \end{itemize}
-
-
-%-------------------------------------------
+ 
 \end{document}
