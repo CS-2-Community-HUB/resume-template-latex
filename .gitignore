@@ -1,0 +1,81 @@
+#LaTeX files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.dvi
+*.fdb_latexmk
+*.fls
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.lox
+*.nav
+*.out
+*.pdfsync
+*.ps
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdy
+*.xdv
+
+# latexmk & arara
+*.lgt
+*.lg
+*.run.xml
+
+# BibTeX & bibliography
+*.bib.bak
+*.bbl.bak
+
+# XeLaTeX font cache
+*.xdv
+
+# glossaries
+*.acn
+*.acr
+*.alg
+
+# Makefile artifacts
+*.d
+*.o
+
+# Output PDF
+*.pdf
+
+# VS Code
+.vscode/
+
+# Vim
+*.swp
+*.swo
+*.swn
+
+# TeXworks
+*.pdfsync
+
+# TeXstudio
+*.synctex.gz
+*.backup
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+.Trash-*
+.nfs*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
